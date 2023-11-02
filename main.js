@@ -15,7 +15,7 @@ function renderKey(key){
     return `
       <li>
         <h3 id="id${currentKey.id}"> 
-          ${currentIndex +1}: ${currentKey.key}
+          ${currentKey.ques}: ${currentKey.key}
           <button class="deleteButton" onclick="deleteKey(${currentKey.id})"> &times; </button>
         </h3>
       </li>
@@ -24,6 +24,7 @@ function renderKey(key){
   var htmlCode = htmls.join("");
   var keySpace = document.querySelector("#keyList");
   keySpace.innerHTML = htmlCode;
+  
 }
 
 //ham them vao danh sach
