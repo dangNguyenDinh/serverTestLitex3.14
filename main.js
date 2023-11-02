@@ -11,6 +11,7 @@ function getExercises(callback){
 }
 //tao ham render ra giao dien
 function renderKey(key){
+  window.location.reload();
   var htmls = key.map((currentKey, currentIndex)=>{
     return `
       <li>
