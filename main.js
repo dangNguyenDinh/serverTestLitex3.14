@@ -10,32 +10,24 @@ function getExercises(callback){
   .then(callback);
 }
 //tao ham render ra giao dien
-function renderKey(key){
-  // var htmls = key?.map((currentKey, currentIndex)=>{
-  //   return `
-  //     <li>
-  //       <h3 id="id${currentKey.id}"> 
-  //         ${currentKey.ques}: ${currentKey.key}
-  //         <button class="deleteButton" onclick="deleteKey(${currentKey.id})"> &times; </button>
-  //       </h3>
-  //     </li>
-  //   `; 
-  // })
+function renderKey(){
+  console.log("hehe")
   var htmls = "";
-  console.log(key);
-  for(let i=0;i<key.length;i++){
-    htmls += `<li>
-    <h3 id="id${key[i].id}"> 
-      ${key[i].ques}: ${key[i].key}
-      <button class="deleteButton" onclick="deleteKey(${key[i].id})"> &times; </button>
-    </h3>
-  </li>`
-    
-  }
-
-  var keySpace = document.querySelector("#keyList");
-  keySpace.innerHTML = htmls;
-  
+  fetch(totalApi)
+  .then(response=>response.json())
+  .then(key=>{
+    console.log(key)
+    for(let i=0;i<key.length;i++){
+      htmls += `<li>
+      <h3 id="id${key[i].id}"> 
+        ${key[i].ques}: ${key[i].key}
+        <button class="deleteButton" onclick="deleteKey(${key[i].id})"> &times; </button>
+      </h3>
+    </li>`
+    }
+    var keySpace = document.querySelector("#keyList");
+    keySpace.innerHTML = htmls;
+  })
 }
 
 //ham them vao danh sach
@@ -70,7 +62,7 @@ function addKey(callback){
 
 
 //ham xoa dap an
-function deleteKey(id){
+function deleteKey(id, callback){
    //fetch tiep
    var options = {
     method: "DELETE",
@@ -82,18 +74,18 @@ function deleteKey(id){
       .then((response)=>{
           return response.json();
       })
-      .then((data)=>{
-          document.querySelector(`h2#id${id}`).remove();
+      .then(()=>{
+        document.querySelector(`h3#id${id}`).remove();
       });
 }
 
 //thuc thi lenh chay full
 function start(){
-  getExercises((data)=>{
-    renderKey(data);
+  getExercises(()=>{
+    renderKey();
   })
-  addKey((data)=>{
-    renderKey(data);
+  addKey(()=>{
+    renderKey();
   })
 }
 
