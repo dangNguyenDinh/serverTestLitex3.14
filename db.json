@@ -1,0 +1,26 @@
+{
+  "doanKienQuoc": [
+    {
+      "ques": "1",
+      "key": "a",
+      "id": 1
+    },
+    {
+      "ques": "2",
+      "key": "h",
+      "id": 2
+    }
+  ],
+  "tranThuy": [
+    {
+      "ques": "1",
+      "key": "a",
+      "id": 1
+    },
+    {
+      "ques": "2",
+      "key": "c",
+      "id": 2
+    }
+  ]
+}

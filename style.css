@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#api{
+    background-color: antiquewhite;
+    display: block;
+    text-align: center;
+    height: 33vh;
+}
+#api input{
+    height: 5vh;
+    font-size: 3vh;
+    width: 100vh;
+}
+#api button{
+    height: 5vh;
+}
+#key{
+    height: 100vh;
+    background-color: aqua;
+}
+
+.adding{
+    position: fixed;
+    right: 5vh;
+    top: 40vh;
+    background-color: rgb(41, 45, 65);
+    color: white;
+    padding: 1vh;
+}
+

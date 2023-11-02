@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#dataInput{
+    background-color: antiquewhite;
+    position: fixed;
+    text-align: center;
+    height: 32vh;
+    font-size: 3vh;
+    display: block;
+    width: 100vw;
+    z-index: 1;
+}
+.questionNo, .trueAnswer{
+    height: 5vh;
+    font-size: 3vh;
+}
+
+#layout{
+    position: absolute;
+    background-color:wheat;
+    border-radius: 5px;
+    border-style: solid;
+    padding: 10px;
+    width: 50vw;
+    top: 40vh;
+    height: 40vh;
+    overflow: auto;
+}
+    
+#result{
+    position: fixed;
+    background-color:wheat;
+    border-radius: 5px;
+    border-style: solid;
+    padding: 10px;
+    width: 40vw;
+    right: 0vw;
+    top: 40vh;
+}
