@@ -46,12 +46,14 @@ function addKey(callback){
       },
       body: JSON.stringify(newData)
     };
+    
     fetch(totalApi,options)
         .then((response)=>{
             return response.json();
         })
         .then(callback);
     }
+  
 }
 
 
