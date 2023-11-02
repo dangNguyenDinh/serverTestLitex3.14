@@ -11,7 +11,7 @@ function getExercises(callback){
 }
 //tao ham render ra giao dien
 function renderKey(key){
-  var htmls = key.map((currentKey, currentIndex)=>{
+  var htmls = key?.map((currentKey, currentIndex)=>{
     return `
       <li>
         <h3 id="id${currentKey.id}"> 
