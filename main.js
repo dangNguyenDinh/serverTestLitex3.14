@@ -11,19 +11,30 @@ function getExercises(callback){
 }
 //tao ham render ra giao dien
 function renderKey(key){
-  var htmls = key?.map((currentKey, currentIndex)=>{
-    return `
-      <li>
-        <h3 id="id${currentKey.id}"> 
-          ${currentKey.ques}: ${currentKey.key}
-          <button class="deleteButton" onclick="deleteKey(${currentKey.id})"> &times; </button>
-        </h3>
-      </li>
-    `;
-  })
-  var htmlCode = htmls.join("");
+  // var htmls = key?.map((currentKey, currentIndex)=>{
+  //   return `
+  //     <li>
+  //       <h3 id="id${currentKey.id}"> 
+  //         ${currentKey.ques}: ${currentKey.key}
+  //         <button class="deleteButton" onclick="deleteKey(${currentKey.id})"> &times; </button>
+  //       </h3>
+  //     </li>
+  //   `; 
+  // })
+  var htmls = "";
+  console.log(key[1]);
+  for(let i=0;i<key.length;i++){
+    htmls += `<li>
+    <h3 id="id${key[i].id}"> 
+      ${key[i].ques}: ${key[i].key}
+      <button class="deleteButton" onclick="deleteKey(${key[i].id})"> &times; </button>
+    </h3>
+  </li>`
+    
+  }
+
   var keySpace = document.querySelector("#keyList");
-  keySpace.innerHTML = htmlCode;
+  keySpace.innerHTML = htmls;
   
 }
 
