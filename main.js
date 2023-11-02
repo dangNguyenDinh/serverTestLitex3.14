@@ -22,7 +22,7 @@ function renderKey(key){
   //   `; 
   // })
   var htmls = "";
-  console.log(key[1]);
+  console.log(key);
   for(let i=0;i<key.length;i++){
     htmls += `<li>
     <h3 id="id${key[i].id}"> 
